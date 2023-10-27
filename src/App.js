@@ -4,24 +4,20 @@ import color from "./color";
 
 export default function App() {
   const inputref = useRef();
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("red");
 
   function relatedColor(search) {
     return Object.keys(color).map((ele) => {
-      console.log(search, color[ele]);
-      return (
-        <div key={ele}>
-          {color[ele].toLowerCase().includes(search.toLowerCase())
-            ? ele + ":" + color[ele]
-            : null}
+      return color[ele].toLowerCase().includes(search) ? (
+        <div style={{ background: ele }} key={ele}>
+          {ele + ":" + color[ele]}
         </div>
-      );
+      ) : null;
     });
   }
 
   return (
     <div className="App">
-      {search}
       <input ref={inputref} type="search" />
       <button
         onClick={(e) => {
