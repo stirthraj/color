@@ -3,11 +3,14 @@
   text-align: center;
 }
 
-.grid{
+.grid {
   display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-items: center;
 }
 
-.grid > div{
+.grid div {
   height: 200px;
   width: 200px;
+  border: 1px solid;
 }
