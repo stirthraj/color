@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.grid{
+  display: grid;
+}
+
+.grid > div{
+  height: 200px;
+  width: 200px;
+}
